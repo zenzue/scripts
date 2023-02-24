@@ -3,6 +3,7 @@ import random
 import time
 import sys
 import argparse
+import socket
 
 async def attack(url):
     reader, writer = await asyncio.open_connection(
