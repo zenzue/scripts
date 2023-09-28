@@ -37,4 +37,4 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print("Interrupted")
         sys.exit(1)
-# python goloris.py example.com 1000
+# python nginx_dos.py example.com 1000
