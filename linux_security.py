@@ -6,6 +6,7 @@ def display_banner():
     Created by w01f @ Pentest Sage
     """
     print(banner)
+    
 def command_exists(command):
     try:
         subprocess.check_output(f"command -v {command}", shell=True)
