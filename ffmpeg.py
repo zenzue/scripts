@@ -7,8 +7,8 @@ import subprocess
 # The timestamp of each frame is also added as text on the extracted images. 
 # The script handles errors during the frame extraction process and provides appropriate error messages to the user.
 
-
-print("Script created by w01f")
+creator = "  Script created by w01f"
+print(creator)
 
 input_video = input("Enter the path to the video file: ")
 output_folder = input("Enter the output file name prefix: ")
@@ -22,7 +22,7 @@ fps_filter = f"fps=1/{custom_fps}"
 ffmpeg_command = [
     "ffmpeg",
     "-i", input_video,
-    "-vf", f"{fps_filter},drawtext=text='%{{pts\:hms}}':x=10:y=10:fontsize=24:fontcolor=white:box=1:boxcolor=black@0.5",
+    "-vf", f"{fps_filter},drawtext=text='%{{pts\:hms}}{creator}':x=10:y=10:fontsize=24:fontcolor=white:box=1:boxcolor=black@0.5",
     "-q:v", "2",
     "-f", "image2",
     f"{output_folder}/output_%03d.png"
